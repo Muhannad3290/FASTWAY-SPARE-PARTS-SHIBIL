@@ -1,11 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f7f9fb;
-}
-
-/* Scrollbar */
+/* Custom scrollbar for better look */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -14,25 +7,9 @@ body {
     border-radius: 4px;
 }
 
-/* Modal default styles */
-.modal {
-    position: fixed;
-    inset: 0;
-    background-color: rgba(31, 41, 55, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    z-index: 50;
-    overflow-y: auto;
-}
-.modal-content {
-    background-color: white;
-    border-radius: 1rem;
-    padding: 2rem;
-    max-width: 32rem;
-    width: 100%;
-}
-.hidden {
-    display: none;
+/* Inter font import and body setting */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fb;
 }
