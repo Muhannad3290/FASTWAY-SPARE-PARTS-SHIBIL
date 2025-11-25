@@ -5,13 +5,13 @@ import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot
 
 // ---- 🔑 REPLACE THIS WITH YOUR FIREBASE CONFIG ----
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_AUTH_DOMAIN",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_STORAGE_BUCKET",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
-};
+    apiKey: "AIzaSyCZ1jrvtalcFwDHTicciBqSYErrQVaQXNU",
+    authDomain: "shibily-ac48d.firebaseapp.com",
+    projectId: "shibily-ac48d",
+    storageBucket: "shibily-ac48d.firebasestorage.app",
+    messagingSenderId: "55312642164",
+    appId: "1:55312642164:web:ae54cb17f9436b28b96121"
+  };
 // -----------------------------------------------------
 
 // Initialize Firebase
@@ -166,3 +166,4 @@ export const app = {
 // Initialize
 window.app = app;
 window.onload = () => app.initFirebase();
+
