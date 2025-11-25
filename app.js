@@ -150,20 +150,55 @@ export const app = {
 
     // ------------------- CRUD -------------------
 
-    async openEditModal(id) {
-        alert("Edit/Add modal should be implemented here (like your original code).");
-    },
+  openEditModal(partId) {
+    this.currentEditId = partId;
+    const modal = document.getElementById('edit-modal');
+    const title = document.getElementById('edit-modal-title');
+    const btn = document.getElementById('save-part-btn');
+    const form = document.getElementById('part-form');
+    form.reset();
 
+    if (partId) {
+        // Editing existing part
+        const part = this.parts.find(p => p.id === partId);
+        if (part) {
+            title.textContent = `Edit Part: ${part.name}`;
+            btn.textContent = 'Update Part';
+            
+            // Populate fields
+            document.getElementById('zoren-no').value = part.zorenNo || '';
+            document.getElementById('oem-no').value = part.oemNo || '';
+            document.getElementById('car-maker').value = part.carMaker || '';
+            document.getElementById('applications').value = part.applications || '';
+            document.getElementById('part-name').value = part.name || '';
+            document.getElementById('part-description').value = part.description || '';
+            document.getElementById('part-price').value = part.price || 0;
+            document.getElementById('part-stock').value = part.stock || 0;
+        }
+    } else {
+        // Adding new part
+        title.textContent = 'Add New Part';
+        btn.textContent = 'Save Part';
+    }
+
+    modal.classList.remove('hidden');
+    setTimeout(() => modal.style.opacity = '1', 10); // Simple transition
+},
     async deletePart(id, name) {
         if (!confirm(`Are you sure to delete ${name}?`)) return;
         await deleteDoc(doc(db, PUBLIC_COLLECTION_PATH, id));
         this.showMessage(`Part '${name}' deleted`, 'success');
     },
 
-    openJsonModal() { alert("JSON bulk modal should be implemented here."); }
+  openJsonModal() {
+    document.getElementById('json-modal').classList.remove('hidden');
+    document.getElementById('json-status').style.display = 'none';
+    document.getElementById('json-status').textContent = '';
+},
 
 };
 
 // Initialize
 window.app = app;
+
 window.onload = () => app.initFirebase();
