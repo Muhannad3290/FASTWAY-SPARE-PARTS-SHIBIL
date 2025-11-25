@@ -179,7 +179,7 @@ export const app = {
         // Adding new part
         title.textContent = 'Add New Part';
         btn.textContent = 'Save Part';
-    }
+    },
 
     modal.classList.remove('hidden');
     setTimeout(() => modal.style.opacity = '1', 10); // Simple transition
@@ -194,7 +194,7 @@ export const app = {
     document.getElementById('json-modal').classList.remove('hidden');
     document.getElementById('json-status').style.display = 'none';
     document.getElementById('json-status').textContent = '';
-},
+}
 
 };
 
@@ -202,3 +202,4 @@ export const app = {
 window.app = app;
 
 window.onload = () => app.initFirebase();
+
