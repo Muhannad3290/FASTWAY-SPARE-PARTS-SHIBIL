@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f7f9fb;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+/* Modal default styles */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(31, 41, 55, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 50;
+    overflow-y: auto;
+}
+.modal-content {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 32rem;
+    width: 100%;
+}
+.hidden {
+    display: none;
+}
