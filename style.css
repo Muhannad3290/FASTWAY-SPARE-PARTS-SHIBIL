@@ -1,15 +1,207 @@
-/* Custom scrollbar for better look */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
+/* PREMIUM BACKGROUND */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
 }
 
-/* Inter font import and body setting */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+/* GLASS CONTAINER */
+.container {
+  width: 520px;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 40px;
+  border-radius: 25px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+/* TITLE */
+.title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* SUBTITLE */
+.subtitle {
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* SEARCH BAR */
+.search-area {
+  display: flex;
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+#searchInput {
+  flex: 1;
+  border: none;
+  padding: 15px 20px;
+  font-size: 1rem;
+  outline: none;
+  color: #444;
+}
+
+#searchBtn {
+  background: #0072ff;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#searchBtn:hover {
+  background: #004fcc;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background: white;
+  padding: 25px;
+  margin-top: 20px;
+  border-radius: 20px;
+  text-align: left;
+  color: #333;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* BADGES (OVAL OEM / ZOREN) */
+.badge {
+  display: inline-block;
+  background: #0072ff;
+  color: white;
+  padding: 7px 14px;
+  margin: 4px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.field-title {
+  font-weight: 700;
+  color: #0072ff;
+  margin-top: 15px;
+  margin-bottom: 4px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* ... previous CSS ... */
+
+/* Edit / Delete buttons in product card */
+.product-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.product-actions button {
+  border: none;
+  padding: 5px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+.edit-btn {
+  background: #ffcc00;
+  color: #333;
+  font-weight: 600;
+}
+.delete-btn {
+  background: #ff4d4d;
+  color: #fff;
+  font-weight: 600;
+}
+.product-actions button:hover {
+  opacity: 0.85;
+}
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: #f7f9fb;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 40px 30px;
+  border-radius: 25px;
+  width: 720px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  backdrop-filter: blur(15px);
+  text-align: center;
+}
+input {
+  flex: 1;
+  padding: 15px 20px;
+  border-radius: 50px 0 0 50px;
+  border: none;
+  font-size: 1em;
+  outline: none;
+}
+
+button {
+  padding: 15px 25px;
+  border-radius: 0 50px 50px 0;
+  border: none;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: linear-gradient(135deg,#0072ff,#00c6ff);
+  transform: scale(1.05);
+}
+.product-card {
+  margin-top: 20px;
+  text-align: left;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.85);
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.25);
+}
+
+.product-card h3 {
+  color: #1e3c72;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+
 }
