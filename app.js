@@ -4,15 +4,14 @@ import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken }
 import { getFirestore, collection, addDoc, updateDoc, deleteDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 // ---- 🔑 REPLACE THIS WITH YOUR FIREBASE CONFIG ----
-  const firebaseConfig = {
-    apiKey: "AIzaSyCZ1jrvtalcFwDHTicciBqSYErrQVaQXNU",
-    authDomain: "shibily-ac48d.firebaseapp.com",
-    projectId: "shibily-ac48d",
-    storageBucket: "shibily-ac48d.firebasestorage.app",
-    messagingSenderId: "55312642164",
-    appId: "1:55312642164:web:ae54cb17f9436b28b96121"
-  };
-
+const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_AUTH_DOMAIN",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_STORAGE_BUCKET",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+};
 // -----------------------------------------------------
 
 // Initialize Firebase
@@ -150,56 +149,20 @@ export const app = {
 
     // ------------------- CRUD -------------------
 
-  openEditModal(partId) {
-    this.currentEditId = partId;
-    const modal = document.getElementById('edit-modal');
-    const title = document.getElementById('edit-modal-title');
-    const btn = document.getElementById('save-part-btn');
-    const form = document.getElementById('part-form');
-    form.reset();
-
-    if (partId) {
-        // Editing existing part
-        const part = this.parts.find(p => p.id === partId);
-        if (part) {
-            title.textContent = `Edit Part: ${part.name}`;
-            btn.textContent = 'Update Part';
-            
-            // Populate fields
-            document.getElementById('zoren-no').value = part.zorenNo || '';
-            document.getElementById('oem-no').value = part.oemNo || '';
-            document.getElementById('car-maker').value = part.carMaker || '';
-            document.getElementById('applications').value = part.applications || '';
-            document.getElementById('part-name').value = part.name || '';
-            document.getElementById('part-description').value = part.description || '';
-            document.getElementById('part-price').value = part.price || 0;
-            document.getElementById('part-stock').value = part.stock || 0;
-        }
-    } else {
-        // Adding new part
-        title.textContent = 'Add New Part';
-        btn.textContent = 'Save Part';
+    async openEditModal(id) {
+        alert("Edit/Add modal should be implemented here (like your original code).");
     },
 
-    modal.classList.remove('hidden');
-    setTimeout(() => modal.style.opacity = '1', 10); // Simple transition
-},
     async deletePart(id, name) {
         if (!confirm(`Are you sure to delete ${name}?`)) return;
         await deleteDoc(doc(db, PUBLIC_COLLECTION_PATH, id));
         this.showMessage(`Part '${name}' deleted`, 'success');
     },
 
-  openJsonModal() {
-    document.getElementById('json-modal').classList.remove('hidden');
-    document.getElementById('json-status').style.display = 'none';
-    document.getElementById('json-status').textContent = '';
-}
+    openJsonModal() { alert("JSON bulk modal should be implemented here."); }
 
 };
 
 // Initialize
 window.app = app;
-
 window.onload = () => app.initFirebase();
-
